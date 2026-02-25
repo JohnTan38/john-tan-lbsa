@@ -1,3 +1,5 @@
+import HeroPage from '@/components/pages/HeroPage'
+
 export default function HomePage() {
-  return <div style={{ padding: 32 }}>Hero — coming soon</div>
+  return <HeroPage />
 }
