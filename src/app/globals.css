@@ -42,3 +42,12 @@ mark {
   border-radius: 2px;
   padding: 0 2px;
 }
+
+@media (max-width: 1023px) {
+  :root {
+    --sidebar-w: 0px;
+  }
+  .hamburger {
+    display: block !important;
+  }
+}

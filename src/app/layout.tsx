@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Sidebar from '@/components/Sidebar/Sidebar'
-import PrevNextBar from '@/components/PrevNextBar/PrevNextBar'
-import PageTransition from '@/components/PageTransition/PageTransition'
+import AppShell from '@/components/AppShell/AppShell'
 import { DirectionProvider } from '@/lib/directionContext'
+import { SearchProvider } from '@/lib/searchContext'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,30 +25,9 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body>
         <DirectionProvider>
-          <Sidebar />
-          <div
-            style={{
-              marginLeft: 'var(--sidebar-w)',
-              height: '100vh',
-              display: 'flex',
-              flexDirection: 'column',
-              overflow: 'hidden',
-            }}
-          >
-            <main
-              style={{
-                flex: 1,
-                overflow: 'hidden',
-                position: 'relative',
-                background: 'var(--white)',
-              }}
-            >
-              <PageTransition>
-                {children}
-              </PageTransition>
-            </main>
-            <PrevNextBar />
-          </div>
+          <SearchProvider>
+            <AppShell>{children}</AppShell>
+          </SearchProvider>
         </DirectionProvider>
       </body>
     </html>

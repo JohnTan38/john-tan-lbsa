@@ -1,21 +1,30 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
-import { PAGES, searchSections, getPageIndex } from '@/lib/navigation'
+import { searchSections } from '@/lib/navigation'
+import { useSearch } from '@/lib/searchContext'
 import NavItem from '@/components/NavItem/NavItem'
 import SearchBox from '@/components/SearchBox/SearchBox'
 import styles from './Sidebar.module.css'
 
-export default function Sidebar() {
+interface Props {
+  isOpen: boolean
+  onClose: () => void
+}
+
+export default function Sidebar({ isOpen, onClose }: Props) {
   const pathname = usePathname()
-  const [query, setQuery] = useState('')
+  const { query, setQuery } = useSearch()
 
   const visiblePages = useMemo(() => searchSections(query), [query])
-  const currentIndex = getPageIndex(pathname)
 
   return (
-    <aside className={styles.sidebar} role="navigation" aria-label="Resume navigation">
+    <aside
+      className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}
+      role="navigation"
+      aria-label="Resume navigation"
+    >
       <div className={styles.header}>
         <div className={styles.monogram}>JT</div>
         <div className={styles.name}>John Tan</div>
@@ -28,7 +37,7 @@ export default function Sidebar() {
 
       <nav className={styles.nav}>
         {visiblePages.map(page => (
-          <NavItem key={page.path} page={page} currentPath={pathname} />
+          <NavItem key={page.path} page={page} currentPath={pathname} onNavigate={onClose} />
         ))}
         {visiblePages.length === 0 && (
           <div style={{ padding: '12px 20px', fontSize: 13, color: 'rgba(255,255,255,0.4)' }}>
@@ -36,12 +45,6 @@ export default function Sidebar() {
           </div>
         )}
       </nav>
-
-      {currentIndex >= 0 && (
-        <div className={styles.pageCount}>
-          {currentIndex + 1} / {PAGES.length}
-        </div>
-      )}
 
       <div className={styles.downloadSection}>
         <a

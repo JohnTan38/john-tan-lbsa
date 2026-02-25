@@ -1,4 +1,8 @@
+'use client'
+
 import type { ExperienceEntry } from '@/data/resume'
+import { useSearch } from '@/lib/searchContext'
+import { highlightText } from '@/lib/highlight'
 import styles from './ExperiencePage.module.css'
 
 interface Props {
@@ -8,12 +12,14 @@ interface Props {
 }
 
 export default function ExperiencePage({ entry, index, total }: Props) {
+  const { query } = useSearch()
+
   return (
     <div className={styles.page}>
       <div className={styles.section}>
         Professional Experience · {index} of {total}
       </div>
-      <h1 className={styles.role}>{entry.role}</h1>
+      <h1 className={styles.role}>{highlightText(entry.role, query)}</h1>
       <div className={styles.company}>{entry.company}</div>
       <div className={styles.period}>{entry.period}</div>
       <div className={styles.divider} />
@@ -26,7 +32,7 @@ export default function ExperiencePage({ entry, index, total }: Props) {
             <li key={i} className={styles.bullet}>
               <span>
                 {title && <span className={styles.bulletTitle}>{title}: </span>}
-                {body}
+                {highlightText(body, query)}
               </span>
             </li>
           )

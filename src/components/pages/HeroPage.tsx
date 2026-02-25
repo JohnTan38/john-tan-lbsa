@@ -31,9 +31,12 @@ export default function HeroPage() {
         >
           🌐 {resume.contact.website}
         </a>
-        <span className={styles.contactItem}>
-          📍 {resume.contact.phone}
-        </span>
+        <a
+          href={`tel:${resume.contact.phone}`}
+          className={styles.contactItem}
+        >
+          📞 {resume.contact.phone}
+        </a>
       </div>
       <p className={styles.tagline}>20+ Years · Finance · Tech · Community</p>
     </div>

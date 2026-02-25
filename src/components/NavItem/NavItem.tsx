@@ -9,9 +9,10 @@ import styles from './NavItem.module.css'
 interface Props {
   page: PageMeta
   currentPath: string
+  onNavigate?: () => void
 }
 
-export default function NavItem({ page, currentPath }: Props) {
+export default function NavItem({ page, currentPath, onNavigate }: Props) {
   const { setDirection } = useDirection()
   const isActive = currentPath === page.path
 
@@ -19,6 +20,7 @@ export default function NavItem({ page, currentPath }: Props) {
     const currentIdx = getPageIndex(currentPath)
     const targetIdx = getPageIndex(page.path)
     setDirection(targetIdx >= currentIdx ? 1 : -1)
+    onNavigate?.()
   }
 
   return (

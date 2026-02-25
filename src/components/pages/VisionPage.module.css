@@ -68,6 +68,7 @@
 
 .closingBody {
   font-size: 15px;
+  font-style: italic;
   line-height: 1.8;
   color: rgba(255,255,255,0.85);
 }

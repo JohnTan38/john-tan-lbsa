@@ -1,14 +1,20 @@
+'use client'
+
 import { resume } from '@/data/resume'
+import { useSearch } from '@/lib/searchContext'
+import { highlightText } from '@/lib/highlight'
 import styles from './SummaryPage.module.css'
 
 export default function SummaryPage() {
+  const { query } = useSearch()
+
   return (
     <div className={styles.page}>
       <div className={styles.section}>Professional Summary</div>
       <blockquote className={styles.tagline}>
-        {resume.summary.tagline}
+        {highlightText(resume.summary.tagline, query)}
       </blockquote>
-      <p className={styles.body}>{resume.summary.body}</p>
+      <p className={styles.body}>{highlightText(resume.summary.body, query)}</p>
       <div className={styles.stats}>
         <div className={styles.stat}>
           <div className={styles.statValue}>20+</div>
