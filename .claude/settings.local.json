@@ -7,7 +7,11 @@
       "Bash(/c/Users/admin/superpowers/jest.config.js:*)",
       "Bash(node -e:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(ls:*)",
+      "Bash(/c/Users/admin/superpowers/src/app/globals.css:*)"
     ]
   }
 }
