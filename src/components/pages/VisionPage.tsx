@@ -4,8 +4,8 @@ import styles from './VisionPage.module.css'
 export default function VisionPage() {
   return (
     <div className={styles.page}>
-      <div className={styles.section}>Center Manager: Resident-Centric Innovation</div>
-      <h2 className={styles.heading}>A Vision for Community Excellence</h2>
+      <div className={styles.section}>Automation Specialist: Intelligent Healthcare Process Innovation</div>
+      <h2 className={styles.heading}>A Vision for NTUC Health Digital Transformation</h2>
       <div className={styles.cards}>
         {resume.vision.sections.map((s, i) => (
           <div key={i} className={styles.card}>

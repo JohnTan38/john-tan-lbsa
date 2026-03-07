@@ -42,41 +42,40 @@ export interface ResumeData {
     searchText: string
   }
 }
-
 export const resume: ResumeData = {
   name: "John Tan",
-  title: "Center Manager | Residents' Network",
+  title: "Automation Specialist | Healthcare Digital Transformation",
   contact: {
     email: "vieming@gmail.com",
     linkedin: "linkedin.com/in/john-tan-02763732",
-    website: "john-tan-presentation.vercel.app",
+    website: "john-tan-automation-specialist.vercel.app",
     phone: "98891383",
   },
   summary: {
-    tagline: "Community Operations Leader | Generative AI & Finance Executive | Social Service Practitioner (In-Training)",
-    body: "Versatile and people-oriented professional with 20+ years of experience across Private Wealth Management and Software Engineering, currently specializing in community care through the WSQ Diploma in Social Service (Tsao Foundation). Expert in financial administration, stakeholder diplomacy, and operational optimization. Proven ability to manage complex accounts (formerly $500M+ AUM) and automate administrative workflows to achieve 30%−50% productivity gains. Committed to the People's Association mission of building social capital and fostering community cohesiveness through proactive outreach and efficient center management.",
-    searchText: "summary community operations leader generative ai finance executive social service private wealth management software engineering tsao foundation stakeholder diplomacy productivity",
+    tagline: "Enterprise RPA Architect | UiPath Developer | Healthcare Process Innovation",
+    body: "Results-driven Automation Specialist with 3+ years of hands-on RPA experience designing, developing, and deploying end-to-end UiPath solutions that achieve 50%+ operational efficiency gains. Proficient in Google Apps Script, Python, JavaScript, C#, VBA, and PHP, with proven integration experience across Google Workspace, Google Cloud Platform, and enterprise finance systems. Currently deepening healthcare domain expertise through a WSQ Diploma in Social Service (Tsao Foundation), specialising in eldercare coordination — directly aligned with NTUC Health’s mission of enabling healthy and fulfilling years for Singapore’s seniors. Combines engineering rigour with stakeholder empathy to deliver automation that is not merely efficient, but human-centred.",
+    searchText: "summary enterprise rpa architect uipath developer healthcare process innovation automation specialist 50% efficiency google workspace gcp python javascript c# vba php eldercare social service tsao foundation",
   },
   competencies: {
     leadership: [
-      "Volunteer Management: Motivation & Recruitment",
-      "Strategic Planning: Resource & Budget Allocation",
-      "Community Engagement",
-      "Soft Skills: Outgoing team player, People-oriented, Problem solver",
+      "UiPath RPA: Design, Development & Deployment",
+      "UiPath Orchestrator: Scheduling, Monitoring & Troubleshooting",
+      "Google Apps Script & Google Cloud Platform",
+      "End-to-End Workflow Design & RPA SDLC",
     ],
     technical: [
-      "AI & RPA: Workflow Automation & LLMs",
-      "Data Analytics: Predictive Needs Analysis",
-      "Software Development Life Cycle",
-      "Stakeholder Management",
+      "Programming: Python · JavaScript · C# · VBA · PHP",
+      "Database & Integration: SQL, Google Workspace, WordPress",
+      "Systems Integration: Finance, Government & Vendor Portals",
+      "Generative AI & LLM-Enhanced Automation",
     ],
     socialService: [
-      "Eldercare Knowledge: AAC Model",
-      "Administration and Finance",
-      "Interest Group Development, Marketing Activities / Events",
-      "Volunteer Management",
+      "Healthcare Finance & Regulatory Compliance",
+      "Government Portal Integration (MOH, SingStat)",
+      "Process Documentation & End-User Training",
+      "Stakeholder Management & Requirements Gathering",
     ],
-    searchText: "competencies leadership volunteer management strategic planning community engagement ai rpa workflow automation data analytics software development eldercare aac model interest group",
+    searchText: "competencies uipath rpa orchestrator google apps script gcp python javascript c# vba php sql wordpress systems integration finance government portal documentation training stakeholder management healthcare",
   },
   experience: [
     {
@@ -85,22 +84,23 @@ export const resume: ResumeData = {
       company: "Cogent Holdings Pte Ltd",
       period: "2022 – Present",
       bullets: [
-        "Operational Excellence: Architected and deployed workflow automations that achieved a 30% productivity increase, demonstrating a capacity to modernize and streamline RN center enquiries and IT systems.",
-        "Technical Communication: Developed user guides that improved team onboarding by 40%, translatable to training grassroots volunteers and residents.",
+        "Process Automation: Architected Google Workspace automation workflows integrating Google Apps Script with GCP data pipelines, reducing manual effort by 30% — demonstrating the multi-system integration skills central to NTUC Health’s finance and portal automation needs.",
+        "Multi-Language Scripting: Developed Python and JavaScript automation scripts for business process optimisation, extending beyond no-code tools to deliver bespoke automation solutions for complex, cross-functional workflows.",
+        "Documentation & Training: Produced comprehensive user guides and process documentation that improved team onboarding by 40%; directly applicable to NTUC Health’s requirement for technical support and training on automated processes.",
       ],
-      searchText: "generative ai engineer cogent holdings workflow automation 30% productivity user guides onboarding volunteers",
+      searchText: "generative ai engineer cogent holdings google workspace gcp python javascript automation workflows 30% user guides onboarding documentation training",
     },
     {
       id: "st-engineering",
-      role: "Software Engineer",
+      role: "Software Engineer (RPA Specialist)",
       company: "ST Engineering",
       period: "2019 – 2022",
       bullets: [
-        "Digital Transformation: Led three complete RPA SDLC projects achieving 50%+ operational efficiency gains; expertise relevant for streamlining care coordination and referrals across government agencies.",
-        "Process Improvement: Led RPA projects achieving 50%+ efficiency gains; expertise applicable to digitizing RN administrative records and improving center ops tempo.",
-        "Analytical Precision: Engineered models with 85% accuracy; demonstrates the meticulous attention to detail required for maintaining RN accounts and performance reports.",
+        "UiPath RPA Leadership: Led 3 complete end-to-end UiPath SDLC projects — from process discovery and design through development, testing, and deployment — achieving 50%+ operational efficiency gains across enterprise operations.",
+        "Orchestrator Management: Administered UiPath Orchestrator for scheduling, monitoring, and troubleshooting of production automation workflows; ensured maximum uptime and rapid incident resolution for business-critical processes.",
+        "Scripting & Debugging: Developed C#, Python, and VBA scripts to extend UiPath automation capabilities; debugged and optimised complex workflows to ensure optimal performance and 85%+ accuracy in automated outputs.",
       ],
-      searchText: "software engineer st engineering rpa sdlc 50% efficiency digital transformation analytical precision 85% accuracy",
+      searchText: "software engineer rpa specialist st engineering uipath sdlc 50% efficiency orchestrator scheduling monitoring troubleshooting c# python vba debugging 85% accuracy",
     },
     {
       id: "abnamro",
@@ -108,11 +108,11 @@ export const resume: ResumeData = {
       company: "ABN AMRO",
       period: "2017 – 2019",
       bullets: [
-        "Financial Stewardship: Managed $500M+ AUM with a 95% client satisfaction score; ensures world-class accuracy and ethics in handling RN center funds and financial records.",
-        "Regulatory Compliance: Orchestrated cross-asset allocation strategies in full compliance with banking investment guidelines; ensures the highest standards of governance and ethical behavior throughout the organization.",
-        "Stakeholder Diplomacy: Built relationships with diverse high-net-worth individuals; translatable to engaging residents from all walks of life and all types of housing estates.",
+        "Finance System Expertise: Managed $500M+ AUM through complex finance system workflows; applied rigorous data accuracy and regulatory compliance standards directly transferable to NTUC Health’s finance and government reporting processes.",
+        "Government & Vendor Portal Integration: Orchestrated cross-system data flows integrating banking, regulatory, and government reporting portals — demonstrating the multi-portal integration experience required for NTUC Health’s automation landscape.",
+        "Stakeholder Collaboration: Partnered with diverse cross-functional teams to analyse business processes, define requirements, and deliver compliant operational solutions — the same collaborative approach John will bring to NTUC Health’s care coordination teams.",
       ],
-      searchText: "director private wealth management abn amro 500m aum 95% client satisfaction regulatory compliance cross-asset allocation stakeholder diplomacy",
+      searchText: "director private wealth management abn amro 500m aum finance system regulatory compliance government portal integration cross-system data flow stakeholder collaboration requirements",
     },
   ],
   education: {
@@ -123,16 +123,16 @@ export const resume: ResumeData = {
         year: "2026 – Present",
         note: "Candidate for Graduation; SCTP Career Transition Programme",
         details: [
-          "Modules: Ethics, Values & Legislation; Workplace Safety & Health; People Management; Volunteer Programme Management; Stakeholder Management; Social Policy Implementation; Financial Management",
-          "Industrial Attachment: 16-day fieldwork with Active Ageing Centre — care coordination for vulnerable seniors",
-          "Specialization: AI-driven outreach modalities and Decision Support System logic for social service management",
+          "Modules: Ethics & Legislation; Financial Management; Stakeholder Management; Social Policy Implementation; Volunteer Programme Management",
+          "Industrial Attachment: 16-day fieldwork with Active Ageing Centre — care coordination for vulnerable seniors, directly relevant to NTUC Health’s eldercare services",
+          "Specialisation: AI-driven outreach modalities and Decision Support System logic for social service management — aligns with NTUC Health’s digital transformation roadmap",
         ],
       },
       {
         degree: "MBA",
         institution: "Nanyang Technological University (NTU)",
         year: "2001 – 2003",
-        note: "Dean's Honors List — risk management and financial modelling",
+        note: "Dean’s Honors List — risk management and financial modelling",
       },
       {
         degree: "Bachelor of Science in Mathematics",
@@ -141,30 +141,35 @@ export const resume: ResumeData = {
         note: "Public Service Commission Scholarship",
       },
     ],
-    searchText: "education wsq diploma social service tsao foundation hua mei mba ntu nanyang dean honors list bachelor mathematics nus national university singapore public service commission scholarship",
+    searchText: "education wsq diploma social service tsao foundation hua mei eldercare active ageing mba ntu nanyang dean honors list bachelor mathematics nus public service commission scholarship financial management stakeholder",
   },
   certifications: {
     items: [
+      "UiPath Advanced Developer Certification (In Progress)",
       "Microsoft Certified: Azure AI Engineer Associate",
       "Google Professional Machine Learning Engineer",
     ],
-    searchText: "certifications microsoft azure ai engineer associate google professional machine learning engineer",
+    searchText: "certifications uipath advanced developer microsoft azure ai engineer associate google professional machine learning engineer rpa",
   },
   vision: {
     sections: [
       {
-        title: "Interest Group Expansion",
-        body: "Leverage data analytics to identify emerging resident interests (e.g., tech-literacy for seniors, AI-art workshops) to attract new customers to the RN center.",
+        title: "Intelligent Care Coordination Automation",
+        body: "Leverage AI-enhanced UiPath RPA to automate eldercare case management, appointment scheduling, and billing workflows across NTUC Health’s six service lines — Senior Day Care, Home Care, Nursing Home, Active Ageing, Rehabilitation, and Family Medicine — freeing care staff to focus entirely on resident wellbeing.",
       },
       {
-        title: "Seamless Administration",
-        body: "Implement simple digital tools for course fee collection and event tracking to allow more time for face-to-face resident engagement.",
+        title: "Unified Healthcare Digital Ecosystem",
+        body: "Design seamless integrations between NTUC Health’s finance systems, government portals (MOH, SingStat, CPF Board), and Google Cloud Platform — enabling real-time data flows, automated compliance reporting, and elimination of duplicate manual portal submissions.",
+      },
+      {
+        title: "Predictive Workforce Automation",
+        body: "Apply data analytics pipelines and automated reporting dashboards to enable proactive resource allocation across nursing home and home care operations — ensuring the right caregivers reach the right seniors at the right time, powered by data not instinct.",
       },
     ],
     closing: {
-      title: "A Multi-Disciplinary Catalyst for Social Mixing",
-      body: "The People's Association requires RN Center Managers who are not only administratively competent but also outgoing team players capable of fostering meaningful connections. John's background in finance guarantees the integrity of RN accounts, while his current social service studies provide the necessary empathy and sector-specific knowledge to champion social cohesion. By integrating this \"heart and technology\" approach, John is uniquely prepared to transform the RN center into a vibrant, efficient, and inclusive community hub.",
+      title: "A Technology-Empathy Bridge for NTUC Health",
+      body: "John’s rare combination of enterprise RPA engineering expertise (UiPath SDLC, Orchestrator, multi-language scripting) and current WSQ Diploma in Social Service (eldercare specialisation at Tsao Foundation) uniquely positions him to build automation that carries a dual mandate: operational excellence and compassionate care delivery. Every workflow he designs at NTUC Health will be engineered not just to save time — but to create more time for the human connections that define quality eldercare.",
     },
-    searchText: "vision innovation interest group expansion data analytics tech literacy seniors ai art seamless administration digital tools social mixing people's association community hub heart technology",
+    searchText: "vision innovation intelligent care coordination automation uipath eldercare senior day care nursing home active ageing unified healthcare digital ecosystem government portals moh singstat cpf google cloud predictive workforce automation technology empathy ntuc health",
   },
 }

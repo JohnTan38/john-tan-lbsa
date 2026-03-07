@@ -12,8 +12,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'John Tan — Resume',
-  description: "Center Manager | Residents' Network | Generative AI & Community Care Professional",
+  title: 'John Tan — Automation Specialist',
+  description: 'Automation Specialist | UiPath RPA Developer | Healthcare Digital Transformation | NTUC Health',
 }
 
 export default function RootLayout({

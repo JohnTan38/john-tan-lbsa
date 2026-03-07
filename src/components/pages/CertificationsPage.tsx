@@ -2,8 +2,9 @@ import { resume } from '@/data/resume'
 import styles from './CertificationsPage.module.css'
 
 const CERT_META: Record<string, { icon: string; issuer: string }> = {
+  'UiPath Advanced Developer Certification (In Progress)': { icon: '🤖', issuer: 'UiPath' },
   'Microsoft Certified: Azure AI Engineer Associate': { icon: '☁️', issuer: 'Microsoft' },
-  'Google Professional Machine Learning Engineer': { icon: '🤖', issuer: 'Google' },
+  'Google Professional Machine Learning Engineer': { icon: '🔬', issuer: 'Google' },
 }
 
 export default function CertificationsPage() {

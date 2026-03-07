@@ -28,7 +28,7 @@ export default function Sidebar({ isOpen, onClose }: Props) {
       <div className={styles.header}>
         <div className={styles.monogram}>JT</div>
         <div className={styles.name}>John Tan</div>
-        <div className={styles.subtitle}>Center Manager · RN</div>
+        <div className={styles.subtitle}>Automation Specialist · NTUC Health</div>
       </div>
 
       <div className={styles.searchSection}>
@@ -48,8 +48,8 @@ export default function Sidebar({ isOpen, onClose }: Props) {
 
       <div className={styles.downloadSection}>
         <a
-          href="/assets/John_Tan_Resume_RN.pdf"
-          download="John_Tan_Resume_RN.pdf"
+          href="/assets/John_Tan_Resume_Automation.pdf"
+          download="John_Tan_Resume_Automation.pdf"
           className={styles.downloadBtn}
         >
           ⬇ Download PDF

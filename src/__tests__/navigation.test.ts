@@ -54,8 +54,8 @@ describe('searchSections', () => {
     expect(searchSections('')).toHaveLength(9)
   })
 
-  it('finds summary page for "community operations"', () => {
-    const results = searchSections('community operations')
+  it('finds summary page for "uipath"', () => {
+    const results = searchSections('uipath')
     expect(results.some(p => p.path === '/summary')).toBe(true)
   })
 

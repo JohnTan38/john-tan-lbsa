@@ -38,7 +38,7 @@ export default function HeroPage() {
           📞 {resume.contact.phone}
         </a>
       </div>
-      <p className={styles.tagline}>20+ Years · Finance · Tech · Community</p>
+      <p className={styles.tagline}>UiPath · Google Cloud · RPA · 50%+ Efficiency Gains</p>
     </div>
   )
 }

@@ -11,7 +11,32 @@
       "Bash(git commit:*)",
       "Bash(git config:*)",
       "Bash(ls:*)",
-      "Bash(/c/Users/admin/superpowers/src/app/globals.css:*)"
+      "Bash(/c/Users/admin/superpowers/src/app/globals.css:*)",
+      "Bash(for var in --navy --navy-dark --navy-mid --gold --gold-light --gold-dim --white --text --text-muted --text-light --surface --border --sidebar-w)",
+      "Bash(do)",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(/c/Users/admin/superpowers/src/data/resume.ts:*)",
+      "Bash(python3:*)",
+      "Bash(printf:*)",
+      "Bash(node:*)",
+      "Bash(powershell.exe -Command:*)",
+      "Bash(powershell.exe -File \"C:\\\\Users\\\\admin\\\\superpowers\\\\write_resume.ps1\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\admin\\\\superpowers\\\\write_resume.ps1\")",
+      "Bash(tee:*)",
+      "Bash(/c/Users/admin/superpowers/src/__tests__/navigation.test.ts:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where npm:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(cat /c/Users/admin/superpowers/src/__tests__/*.test.*)",
+      "Bash(cmd /c \"rmdir /s /q C:\\\\Users\\\\admin\\\\superpowers-automation\")",
+      "Bash(cmd /c \"rmdir /s /q C:\\\\Users\\\\admin\\\\superpowers-automation\\\\node_modules\")"
     ]
   }
 }

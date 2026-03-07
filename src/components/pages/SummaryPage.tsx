@@ -17,20 +17,20 @@ export default function SummaryPage() {
       <p className={styles.body}>{highlightText(resume.summary.body, query)}</p>
       <div className={styles.stats}>
         <div className={styles.stat}>
-          <div className={styles.statValue}>20+</div>
-          <div className={styles.statLabel}>Years Experience</div>
+          <div className={styles.statValue}>3+</div>
+          <div className={styles.statLabel}>Years RPA Experience</div>
         </div>
         <div className={styles.stat}>
-          <div className={styles.statValue}>$500M+</div>
-          <div className={styles.statLabel}>AUM Managed</div>
+          <div className={styles.statValue}>50%+</div>
+          <div className={styles.statLabel}>Efficiency Gains</div>
         </div>
         <div className={styles.stat}>
-          <div className={styles.statValue}>50%</div>
-          <div className={styles.statLabel}>Productivity Gains</div>
+          <div className={styles.statValue}>5+</div>
+          <div className={styles.statLabel}>Languages Mastered</div>
         </div>
         <div className={styles.stat}>
           <div className={styles.statValue}>3</div>
-          <div className={styles.statLabel}>Career Domains</div>
+          <div className={styles.statLabel}>Enterprise Integrations</div>
         </div>
       </div>
     </div>

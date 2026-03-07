@@ -1,0 +1,58 @@
+https://claude.ai/claude-code-desktop/local_6ae05678-6d4b-4e95-bdf3-60092551c8af
+
+Great question! Here are all the ways to save / return to this work:
+
+---
+
+## 🗂️ The Code (Permanent)
+
+The full project is already committed to git at:
+```
+C:\Users\admin\superpowers\
+```
+**To return to it in any future Claude Code session:**
+```bash
+cd C:\Users\admin\superpowers
+claude
+```
+Claude Code will automatically pick up the project context from that directory.
+
+---
+
+## 💬 This Specific Conversation
+
+Your session transcript is saved at:
+```
+C:\Users\admin\.claude\projects\C--Users-admin-superpowers\
+```
+In Claude Code you can **resume the last session** with:
+```bash
+claude --continue        # resume the most recent conversation
+claude --resume          # pick from a list of past sessions
+```
+
+---
+
+## 🌐 The Live Dev Site
+
+To restart the website any time:
+```bash
+cd C:\Users\admin\superpowers
+npm run dev
+# → http://localhost:3000
+```
+
+---
+
+## 🚀 To Make It Publicly Accessible (Optional)
+
+If you want a **permanent shareable URL**, deploy to Vercel for free:
+```bash
+cd C:\Users\admin\superpowers
+npx vercel
+```
+It will give you a URL like `https://john-tan-resume.vercel.app` — shareable with anyone, no local server needed.
+
+---
+
+**TL;DR — the code is safe in git. Just `cd` to the folder and run `claude` or `npm run dev` any time.**
