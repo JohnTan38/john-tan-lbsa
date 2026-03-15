@@ -130,4 +130,10 @@ export const resumeTOUCH: ResumeData = {
     },
     searchText: "vision centralised digital volunteer ecosystem platform recruitment engagement retention volunteer coordinator community connections data-driven survey analytics upskilling appreciation retention risk cross-departmental community partnership network corporate educational government volunteer base vision 2030 active ageing technology empathy digital transformation social service",
   },
+  stats: [
+    { value: '6+', label: 'Years Digital Transformation' },
+    { value: '3+', label: 'Years Stakeholder Management' },
+    { value: '200+', label: 'Stakeholders Managed' },
+    { value: '16', label: 'Days Community Fieldwork' },
+  ],
 }

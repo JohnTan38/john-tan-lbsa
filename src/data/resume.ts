@@ -41,6 +41,7 @@ export interface ResumeData {
     closing: { title: string; body: string }
     searchText: string
   }
+  stats: { value: string; label: string }[]
 }
 export const resume: ResumeData = {
   name: "John Tan",
@@ -172,4 +173,10 @@ export const resume: ResumeData = {
     },
     searchText: "vision innovation intelligent care coordination automation uipath eldercare senior day care nursing home active ageing unified healthcare digital ecosystem government portals moh singstat cpf google cloud predictive workforce automation technology empathy ntuc health",
   },
+  stats: [
+    { value: '3+', label: 'Years RPA Experience' },
+    { value: '50%+', label: 'Efficiency Gains' },
+    { value: '5+', label: 'Languages Mastered' },
+    { value: '3', label: 'Enterprise Integrations' },
+  ],
 }
