@@ -1,4 +1,5 @@
 import { resume } from '@/data/resume'
+import type { ResumeData } from '@/data/resume'
 
 export interface PageMeta {
   path: string
@@ -64,6 +65,65 @@ export const PAGES: PageMeta[] = [
   },
 ]
 
+export function getSearchPages(resumeData: ResumeData): PageMeta[] {
+  return [
+    {
+      path: '/',
+      label: 'Home',
+      icon: '🏠',
+      searchText: `${resumeData.name} ${resumeData.title} ${Object.values(resumeData.contact).join(' ')}`,
+    },
+    {
+      path: '/summary',
+      label: 'Summary',
+      icon: '📝',
+      searchText: resumeData.summary.searchText,
+    },
+    {
+      path: '/competencies',
+      label: 'Competencies',
+      icon: '⭐',
+      searchText: resumeData.competencies.searchText,
+    },
+    {
+      path: '/experience/cogent',
+      label: 'Cogent',
+      icon: '🤝',
+      searchText: resumeData.experience[0].searchText,
+    },
+    {
+      path: '/experience/st-engineering',
+      label: 'ST Engineering',
+      icon: '⚙️',
+      searchText: resumeData.experience[1].searchText,
+    },
+    {
+      path: '/experience/abnamro',
+      label: 'ABN AMRO',
+      icon: '💼',
+      searchText: resumeData.experience[2].searchText,
+    },
+    {
+      path: '/education',
+      label: 'Education',
+      icon: '🎓',
+      searchText: resumeData.education.searchText,
+    },
+    {
+      path: '/certifications',
+      label: 'Certifications',
+      icon: '🏅',
+      searchText: resumeData.certifications.searchText,
+    },
+    {
+      path: '/vision',
+      label: 'Vision',
+      icon: '💡',
+      searchText: resumeData.vision.searchText,
+    },
+  ]
+}
+
 export function getPageIndex(path: string): number {
   return PAGES.findIndex(p => p.path === path)
 }
@@ -80,8 +140,8 @@ export function getAdjacentPages(path: string): {
   }
 }
 
-export function searchSections(query: string): PageMeta[] {
-  if (!query.trim()) return PAGES
+export function searchSections(query: string, pages: PageMeta[] = PAGES): PageMeta[] {
+  if (!query.trim()) return pages
   const q = query.toLowerCase()
-  return PAGES.filter(p => p.searchText.toLowerCase().includes(q))
+  return pages.filter(p => p.searchText.toLowerCase().includes(q))
 }
