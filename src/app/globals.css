@@ -51,3 +51,15 @@ mark {
     display: block !important;
   }
 }
+
+/* TOUCH Volunteer Management theme — forest green + coral */
+[data-role="touch"] {
+  --navy:       #1e3d2f;
+  --navy-dark:  #122a1f;
+  --navy-mid:   #2d5a40;
+  --gold:       #e07055;
+  --gold-light: #f5b8a8;
+  --gold-dim:   #b85a44;
+  --surface:    #faf8f4;
+  --border:     #e5ddd4;
+}
