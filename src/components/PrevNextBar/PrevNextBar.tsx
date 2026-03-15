@@ -2,15 +2,20 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { getAdjacentPages, getPageIndex, PAGES } from '@/lib/navigation'
+import { getSearchPages } from '@/lib/navigation'
+import { useRole } from '@/lib/roleContext'
 import { useDirection } from '@/lib/directionContext'
 import styles from './PrevNextBar.module.css'
 
 export default function PrevNextBar() {
   const pathname = usePathname()
   const { setDirection } = useDirection()
-  const { prev, next } = getAdjacentPages(pathname)
-  const currentIndex = getPageIndex(pathname)
+  const { resumeData } = useRole()
+
+  const pages = getSearchPages(resumeData)
+  const currentIndex = pages.findIndex(p => p.path === pathname)
+  const prev = currentIndex > 0 ? pages[currentIndex - 1] : null
+  const next = currentIndex < pages.length - 1 ? pages[currentIndex + 1] : null
 
   return (
     <div className={styles.bar} role="navigation" aria-label="Page navigation">
@@ -29,7 +34,7 @@ export default function PrevNextBar() {
 
       <div className={styles.center}>
         <div className={styles.dots} aria-hidden="true">
-          {PAGES.map((_, i) => (
+          {pages.map((_, i) => (
             <div
               key={i}
               className={`${styles.dot} ${i === currentIndex ? styles.dotActive : ''}`}
@@ -37,7 +42,7 @@ export default function PrevNextBar() {
           ))}
         </div>
         <span className={styles.label}>
-          {currentIndex + 1} of {PAGES.length}
+          {currentIndex + 1} of {pages.length}
         </span>
       </div>
 
