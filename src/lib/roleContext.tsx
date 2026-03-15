@@ -16,7 +16,7 @@ interface RoleContextValue {
 const RoleContext = createContext<RoleContextValue>({
   role: 'touch',
   resumeData: resumeTOUCH,
-  switcherHref: () => '/',
+  switcherHref: (path) => path,
 })
 
 export function RoleProvider({ children }: { children: React.ReactNode }) {
