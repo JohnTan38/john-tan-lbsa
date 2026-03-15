@@ -4,6 +4,7 @@ import './globals.css'
 import AppShell from '@/components/AppShell/AppShell'
 import { DirectionProvider } from '@/lib/directionContext'
 import { SearchProvider } from '@/lib/searchContext'
+import { RoleProvider } from '@/lib/roleContext'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,8 +13,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'John Tan — Automation Specialist',
-  description: 'Automation Specialist | UiPath RPA Developer | Healthcare Digital Transformation | NTUC Health',
+  title: 'John Tan — Resume',
+  description: 'John Tan | Volunteer Management Executive | Digital Transformation | Community Engagement | Singapore',
 }
 
 export default function RootLayout({
@@ -26,7 +27,9 @@ export default function RootLayout({
       <body>
         <DirectionProvider>
           <SearchProvider>
-            <AppShell>{children}</AppShell>
+            <RoleProvider>
+              <AppShell>{children}</AppShell>
+            </RoleProvider>
           </SearchProvider>
         </DirectionProvider>
       </body>
