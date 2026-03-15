@@ -1,12 +1,15 @@
-import { resume } from '@/data/resume'
+'use client'
+
+import { useRole } from '@/lib/roleContext'
 import styles from './EducationPage.module.css'
 
 export default function EducationPage() {
+  const { resumeData } = useRole()
   return (
     <div className={styles.page}>
       <div className={styles.section}>Educational Excellence & Professional Pivot</div>
       <div className={styles.timeline}>
-        {resume.education.entries.map((entry, i) => (
+        {resumeData.education.entries.map((entry, i) => (
           <div key={i} className={styles.entry}>
             <div className={styles.year}>{entry.year}</div>
             <div className={styles.degree}>{entry.degree}</div>
