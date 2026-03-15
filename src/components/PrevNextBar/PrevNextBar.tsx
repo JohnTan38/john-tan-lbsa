@@ -10,7 +10,7 @@ import styles from './PrevNextBar.module.css'
 export default function PrevNextBar() {
   const pathname = usePathname()
   const { setDirection } = useDirection()
-  const { resumeData } = useRole()
+  const { resumeData, switcherHref } = useRole()
 
   const pages = getSearchPages(resumeData)
   const currentIndex = pages.findIndex(p => p.path === pathname)
@@ -21,7 +21,7 @@ export default function PrevNextBar() {
     <div className={styles.bar} role="navigation" aria-label="Page navigation">
       {prev ? (
         <Link
-          href={prev.path}
+          href={switcherHref(prev.path)}
           className={`${styles.navBtn} ${styles.prevBtn}`}
           onClick={() => setDirection(-1)}
           aria-label={`Previous: ${prev.label}`}
@@ -48,7 +48,7 @@ export default function PrevNextBar() {
 
       {next ? (
         <Link
-          href={next.path}
+          href={switcherHref(next.path)}
           className={`${styles.navBtn} ${styles.nextBtn}`}
           onClick={() => setDirection(1)}
           aria-label={`Next: ${next.label}`}
