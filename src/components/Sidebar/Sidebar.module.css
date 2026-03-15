@@ -114,3 +114,30 @@
     transform: translateX(0);
   }
 }
+
+.roleBadge {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  opacity: 0.9;
+}
+
+.roleDot {
+  color: var(--gold);
+}
+
+.switcherLink {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.switcherLink:hover {
+  color: rgba(255, 255, 255, 0.75);
+}

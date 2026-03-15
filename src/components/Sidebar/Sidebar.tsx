@@ -2,8 +2,9 @@
 
 import { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
-import { searchSections } from '@/lib/navigation'
+import { getSearchPages, searchSections } from '@/lib/navigation'
 import { useSearch } from '@/lib/searchContext'
+import { useRole } from '@/lib/roleContext'
 import NavItem from '@/components/NavItem/NavItem'
 import SearchBox from '@/components/SearchBox/SearchBox'
 import styles from './Sidebar.module.css'
@@ -16,8 +17,22 @@ interface Props {
 export default function Sidebar({ isOpen, onClose }: Props) {
   const pathname = usePathname()
   const { query, setQuery } = useSearch()
+  const { role, resumeData, switcherHref } = useRole()
 
-  const visiblePages = useMemo(() => searchSections(query), [query])
+  const pages = useMemo(() => getSearchPages(resumeData), [resumeData])
+  const visiblePages = useMemo(() => searchSections(query, pages), [query, pages])
+
+  const isTOUCH = role === 'touch'
+  const pdfHref = isTOUCH
+    ? '/assets/John_Tan_Resume_TOUCH.pdf'
+    : '/assets/John_Tan_Resume_Automation.pdf'
+  const pdfFilename = isTOUCH
+    ? 'John_Tan_Resume_TOUCH.pdf'
+    : 'John_Tan_Resume_Automation.pdf'
+  const switchLabel = isTOUCH
+    ? 'Switch: Automation Specialist →'
+    : 'Switch: Volunteer Mgmt Exec →'
+  const roleLabel = isTOUCH ? 'TOUCH' : 'NTUC Health'
 
   return (
     <aside
@@ -27,8 +42,13 @@ export default function Sidebar({ isOpen, onClose }: Props) {
     >
       <div className={styles.header}>
         <div className={styles.monogram}>JT</div>
-        <div className={styles.name}>John Tan</div>
-        <div className={styles.subtitle}>Automation Specialist · NTUC Health</div>
+        <div className={styles.name}>{resumeData.name}</div>
+        <div className={styles.subtitle}>
+          {isTOUCH ? 'Volunteer Management · TOUCH' : 'Automation Specialist · NTUC Health'}
+        </div>
+        <div className={styles.roleBadge}>
+          <span className={styles.roleDot}>●</span> {roleLabel}
+        </div>
       </div>
 
       <div className={styles.searchSection}>
@@ -48,11 +68,17 @@ export default function Sidebar({ isOpen, onClose }: Props) {
 
       <div className={styles.downloadSection}>
         <a
-          href="/assets/John_Tan_Resume_Automation.pdf"
-          download="John_Tan_Resume_Automation.pdf"
+          href={pdfHref}
+          download={pdfFilename}
           className={styles.downloadBtn}
         >
           ⬇ Download PDF
+        </a>
+        <a
+          href={switcherHref(pathname)}
+          className={styles.switcherLink}
+        >
+          {switchLabel}
         </a>
       </div>
     </aside>
