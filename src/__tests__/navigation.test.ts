@@ -3,7 +3,10 @@ import {
   getPageIndex,
   getAdjacentPages,
   searchSections,
+  getSearchPages,
 } from '@/lib/navigation'
+import { resume } from '@/data/resume'
+import { resumeTOUCH } from '@/data/resumeTOUCH'
 
 describe('PAGES', () => {
   it('has 9 entries', () => {
@@ -72,5 +75,39 @@ describe('searchSections', () => {
     const lower = searchSections('azure')
     const upper = searchSections('AZURE')
     expect(lower).toEqual(upper)
+  })
+})
+
+describe('getSearchPages', () => {
+  it('returns 9 pages for automation resume', () => {
+    expect(getSearchPages(resume)).toHaveLength(9)
+  })
+
+  it('returns 9 pages for TOUCH resume', () => {
+    expect(getSearchPages(resumeTOUCH)).toHaveLength(9)
+  })
+
+  it('automation pages contain uipath in summary searchText', () => {
+    const pages = getSearchPages(resume)
+    const summary = pages.find(p => p.path === '/summary')!
+    expect(summary.searchText.toLowerCase()).toContain('uipath')
+  })
+
+  it('TOUCH pages contain volunteer in summary searchText', () => {
+    const pages = getSearchPages(resumeTOUCH)
+    const summary = pages.find(p => p.path === '/summary')!
+    expect(summary.searchText.toLowerCase()).toContain('volunteer')
+  })
+
+  it('first page is / for both roles', () => {
+    expect(getSearchPages(resume)[0].path).toBe('/')
+    expect(getSearchPages(resumeTOUCH)[0].path).toBe('/')
+  })
+
+  it('last page is /vision for both roles', () => {
+    const autoPages = getSearchPages(resume)
+    const touchPages = getSearchPages(resumeTOUCH)
+    expect(autoPages[autoPages.length - 1].path).toBe('/vision')
+    expect(touchPages[touchPages.length - 1].path).toBe('/vision')
   })
 })
