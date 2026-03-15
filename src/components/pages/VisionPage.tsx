@@ -1,13 +1,23 @@
-import { resume } from '@/data/resume'
+'use client'
+
+import { useRole } from '@/lib/roleContext'
 import styles from './VisionPage.module.css'
 
 export default function VisionPage() {
+  const { resumeData, role } = useRole()
+  const heading = role === 'touch'
+    ? 'A Vision for TOUCH Community Empowerment'
+    : 'A Vision for NTUC Health Digital Transformation'
+  const section = role === 'touch'
+    ? 'Volunteer Management Executive: Community & Digital Innovation'
+    : 'Automation Specialist: Intelligent Healthcare Process Innovation'
+
   return (
     <div className={styles.page}>
-      <div className={styles.section}>Automation Specialist: Intelligent Healthcare Process Innovation</div>
-      <h2 className={styles.heading}>A Vision for NTUC Health Digital Transformation</h2>
+      <div className={styles.section}>{section}</div>
+      <h2 className={styles.heading}>{heading}</h2>
       <div className={styles.cards}>
-        {resume.vision.sections.map((s, i) => (
+        {resumeData.vision.sections.map((s, i) => (
           <div key={i} className={styles.card}>
             <div className={styles.cardTitle}>{s.title}</div>
             <div className={styles.cardBody}>{s.body}</div>
@@ -15,8 +25,8 @@ export default function VisionPage() {
         ))}
       </div>
       <div className={styles.closing}>
-        <div className={styles.closingTitle}>{resume.vision.closing.title}</div>
-        <p className={styles.closingBody}>{resume.vision.closing.body}</p>
+        <div className={styles.closingTitle}>{resumeData.vision.closing.title}</div>
+        <p className={styles.closingBody}>{resumeData.vision.closing.body}</p>
       </div>
     </div>
   )
