@@ -1,7 +1,9 @@
+'use client'
+
 import ExperiencePage from '@/components/pages/ExperiencePage'
-import { resume } from '@/data/resume'
+import { useRole } from '@/lib/roleContext'
 
 export default function CogentPage() {
-  const total = resume.experience.length
-  return <ExperiencePage entry={resume.experience[0]} index={1} total={total} />
+  const { resumeData } = useRole()
+  return <ExperiencePage entry={resumeData.experience[0]} index={1} total={resumeData.experience.length} />
 }

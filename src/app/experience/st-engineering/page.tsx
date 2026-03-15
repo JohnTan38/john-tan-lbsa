@@ -1,7 +1,9 @@
-import ExperiencePage from '@/components/pages/ExperiencePage'
-import { resume } from '@/data/resume'
+'use client'
 
-export default function StEngineeringPage() {
-  const total = resume.experience.length
-  return <ExperiencePage entry={resume.experience[1]} index={2} total={total} />
+import ExperiencePage from '@/components/pages/ExperiencePage'
+import { useRole } from '@/lib/roleContext'
+
+export default function STEngineeringPage() {
+  const { resumeData } = useRole()
+  return <ExperiencePage entry={resumeData.experience[1]} index={2} total={resumeData.experience.length} />
 }
