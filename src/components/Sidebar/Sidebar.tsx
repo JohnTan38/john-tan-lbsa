@@ -24,15 +24,15 @@ export default function Sidebar({ isOpen, onClose }: Props) {
 
   const isLBSA = role === 'lbsa'
   const pdfHref = isLBSA
-    ? '/assets/John_Tan_Resume_TOUCH.pdf'
+    ? '/assets/John_Tan_Resume_LBSA.pdf'
     : '/assets/John_Tan_Resume_Automation.pdf'
   const pdfFilename = isLBSA
-    ? 'John_Tan_Resume_TOUCH.pdf'
+    ? 'John_Tan_Resume_LBSA.pdf'
     : 'John_Tan_Resume_Automation.pdf'
   const switchLabel = isLBSA
     ? 'Switch: Automation Specialist →'
-    : 'Switch: Volunteer Mgmt Exec →'
-  const roleLabel = isLBSA ? 'TOUCH' : 'NTUC Health'
+    : 'Switch: Programme Executive →'
+  const roleLabel = isLBSA ? 'LBSA' : 'Automation'
 
   return (
     <aside
@@ -44,7 +44,7 @@ export default function Sidebar({ isOpen, onClose }: Props) {
         <div className={styles.monogram}>JT</div>
         <div className={styles.name}>{resumeData.name}</div>
         <div className={styles.subtitle}>
-          {isLBSA ? 'Volunteer Management · TOUCH' : 'Automation Specialist · NTUC Health'}
+          {isLBSA ? 'Programme Executive · LBSA' : 'Automation Specialist · NTUC Health'}
         </div>
         <div className={styles.roleBadge}>
           <span className={styles.roleDot}>●</span> {roleLabel}
