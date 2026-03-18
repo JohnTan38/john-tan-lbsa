@@ -132,7 +132,7 @@ export const resumeLBSA: ResumeData = {
   },
   stats: [
     { value: '16', label: 'Days AAC Fieldwork' },
-    { value: '3+', label: 'Years Stakeholder Mgmt' },
+    { value: '3+', label: 'Years Stakeholder Management' },
     { value: '200+', label: 'Partners Managed' },
     { value: '5', label: 'Dimensions of Wellbeing' },
   ],
