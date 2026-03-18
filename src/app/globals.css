@@ -52,14 +52,14 @@ mark {
   }
 }
 
-/* TOUCH Volunteer Management theme — forest green + coral */
-[data-role="touch"] {
-  --navy:       #1e3d2f;
-  --navy-dark:  #122a1f;
-  --navy-mid:   #2d5a40;
-  --gold:       #e07055;
-  --gold-light: #f5b8a8;
-  --gold-dim:   #b85a44;
-  --surface:    #faf8f4;
-  --border:     #e5ddd4;
+/* LBSA Programme Executive theme — Lion Befrienders blue/white */
+[data-role="lbsa"] {
+  --navy:       #1565C0;
+  --navy-dark:  #0D47A1;
+  --navy-mid:   #1976D2;
+  --gold:       #42A5F5;
+  --gold-light: #90CAF9;
+  --gold-dim:   #1E88E5;
+  --surface:    #FFFFFF;
+  --border:     #E3F2FD;
 }
