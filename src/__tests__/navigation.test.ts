@@ -6,7 +6,7 @@ import {
   getSearchPages,
 } from '@/lib/navigation'
 import { resume } from '@/data/resume'
-import { resumeTOUCH } from '@/data/resumeTOUCH'
+import { resumeLBSA } from '@/data/resumeLBSA'
 
 describe('PAGES', () => {
   it('has 9 entries', () => {
@@ -83,8 +83,8 @@ describe('getSearchPages', () => {
     expect(getSearchPages(resume)).toHaveLength(9)
   })
 
-  it('returns 9 pages for TOUCH resume', () => {
-    expect(getSearchPages(resumeTOUCH)).toHaveLength(9)
+  it('returns 9 pages for LBSA resume', () => {
+    expect(getSearchPages(resumeLBSA)).toHaveLength(9)
   })
 
   it('automation pages contain uipath in summary searchText', () => {
@@ -93,21 +93,27 @@ describe('getSearchPages', () => {
     expect(summary.searchText.toLowerCase()).toContain('uipath')
   })
 
-  it('TOUCH pages contain volunteer in summary searchText', () => {
-    const pages = getSearchPages(resumeTOUCH)
+  it('LBSA pages contain active ageing in summary searchText', () => {
+    const pages = getSearchPages(resumeLBSA)
     const summary = pages.find(p => p.path === '/summary')!
-    expect(summary.searchText.toLowerCase()).toContain('volunteer')
+    expect(summary.searchText.toLowerCase()).toContain('active ageing')
+  })
+
+  it('LBSA pages contain community screener tool in education searchText', () => {
+    const pages = getSearchPages(resumeLBSA)
+    const education = pages.find(p => p.path === '/education')!
+    expect(education.searchText.toLowerCase()).toContain('community screener tool')
   })
 
   it('first page is / for both roles', () => {
     expect(getSearchPages(resume)[0].path).toBe('/')
-    expect(getSearchPages(resumeTOUCH)[0].path).toBe('/')
+    expect(getSearchPages(resumeLBSA)[0].path).toBe('/')
   })
 
   it('last page is /vision for both roles', () => {
     const autoPages = getSearchPages(resume)
-    const touchPages = getSearchPages(resumeTOUCH)
+    const lbsaPages = getSearchPages(resumeLBSA)
     expect(autoPages[autoPages.length - 1].path).toBe('/vision')
-    expect(touchPages[touchPages.length - 1].path).toBe('/vision')
+    expect(lbsaPages[lbsaPages.length - 1].path).toBe('/vision')
   })
 })
