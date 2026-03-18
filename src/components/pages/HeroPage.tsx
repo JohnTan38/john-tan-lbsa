@@ -5,7 +5,7 @@ import styles from './HeroPage.module.css'
 
 export default function HeroPage() {
   const { resumeData, role } = useRole()
-  const tagline = role === 'touch'
+  const tagline = role === 'lbsa'
     ? 'Stakeholder Engagement · Volunteer Coordination · Digital Systems · Community Empowerment'
     : 'UiPath · Google Cloud · RPA · 50%+ Efficiency Gains'
 

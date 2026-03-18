@@ -5,10 +5,10 @@ import styles from './VisionPage.module.css'
 
 export default function VisionPage() {
   const { resumeData, role } = useRole()
-  const heading = role === 'touch'
+  const heading = role === 'lbsa'
     ? 'A Vision for TOUCH Community Empowerment'
     : 'A Vision for NTUC Health Digital Transformation'
-  const section = role === 'touch'
+  const section = role === 'lbsa'
     ? 'Volunteer Management Executive: Community & Digital Innovation'
     : 'Automation Specialist: Intelligent Healthcare Process Innovation'
 

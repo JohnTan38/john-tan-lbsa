@@ -7,7 +7,7 @@ export default function CompetenciesPage() {
   const { resumeData, role } = useRole()
   const { leadership, technical, socialService } = resumeData.competencies
 
-  const titles = role === 'touch'
+  const titles = role === 'lbsa'
     ? ['Stakeholder & People', 'Digital & Process', 'Social Service']
     : ['RPA & Automation', 'Programming & Integration', 'Domain Knowledge']
 

@@ -22,17 +22,17 @@ export default function Sidebar({ isOpen, onClose }: Props) {
   const pages = useMemo(() => getSearchPages(resumeData), [resumeData])
   const visiblePages = useMemo(() => searchSections(query, pages), [query, pages])
 
-  const isTOUCH = role === 'touch'
-  const pdfHref = isTOUCH
+  const isLBSA = role === 'lbsa'
+  const pdfHref = isLBSA
     ? '/assets/John_Tan_Resume_TOUCH.pdf'
     : '/assets/John_Tan_Resume_Automation.pdf'
-  const pdfFilename = isTOUCH
+  const pdfFilename = isLBSA
     ? 'John_Tan_Resume_TOUCH.pdf'
     : 'John_Tan_Resume_Automation.pdf'
-  const switchLabel = isTOUCH
+  const switchLabel = isLBSA
     ? 'Switch: Automation Specialist →'
     : 'Switch: Volunteer Mgmt Exec →'
-  const roleLabel = isTOUCH ? 'TOUCH' : 'NTUC Health'
+  const roleLabel = isLBSA ? 'TOUCH' : 'NTUC Health'
 
   return (
     <aside
@@ -44,7 +44,7 @@ export default function Sidebar({ isOpen, onClose }: Props) {
         <div className={styles.monogram}>JT</div>
         <div className={styles.name}>{resumeData.name}</div>
         <div className={styles.subtitle}>
-          {isTOUCH ? 'Volunteer Management · TOUCH' : 'Automation Specialist · NTUC Health'}
+          {isLBSA ? 'Volunteer Management · TOUCH' : 'Automation Specialist · NTUC Health'}
         </div>
         <div className={styles.roleBadge}>
           <span className={styles.roleDot}>●</span> {roleLabel}
