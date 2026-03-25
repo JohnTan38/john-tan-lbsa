@@ -4,10 +4,8 @@ import { useRole } from '@/lib/roleContext'
 import styles from './HeroPage.module.css'
 
 export default function HeroPage() {
-  const { resumeData, role } = useRole()
-  const tagline = role === 'lbsa'
-    ? 'Stakeholder Engagement · Volunteer Coordination · Digital Systems · Community Empowerment'
-    : 'UiPath · Google Cloud · RPA · 50%+ Efficiency Gains'
+  const { resumeData } = useRole()
+  const tagline = resumeData.summary.tagline
 
   return (
     <div className={styles.page}>
