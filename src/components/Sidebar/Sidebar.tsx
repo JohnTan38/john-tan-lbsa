@@ -22,17 +22,17 @@ export default function Sidebar({ isOpen, onClose }: Props) {
   const pages = useMemo(() => getSearchPages(resumeData), [resumeData])
   const visiblePages = useMemo(() => searchSections(query, pages), [query, pages])
 
-  const isLBSA = role === 'lbsa'
-  const pdfHref = isLBSA
-    ? '/assets/John_Tan_Resume_LBSA.pdf'
-    : '/assets/John_Tan_Resume_Automation.pdf'
-  const pdfFilename = isLBSA
-    ? 'John_Tan_Resume_LBSA.pdf'
-    : 'John_Tan_Resume_Automation.pdf'
-  const switchLabel = isLBSA
-    ? 'Switch: Automation Specialist →'
-    : 'Switch: Programme Executive →'
-  const roleLabel = isLBSA ? 'LBSA' : 'Automation'
+  const isTHK = role === 'thk'
+  const pdfHref = isTHK
+    ? '/assets/John_Tan_Resume_THK.pdf'
+    : '/assets/John_Tan_Resume_LBSA.pdf'
+  const pdfFilename = isTHK
+    ? 'John_Tan_Resume_THK.pdf'
+    : 'John_Tan_Resume_LBSA.pdf'
+  const switchLabel = isTHK
+    ? 'Switch: LBSA Programme Executive →'
+    : 'Switch: THK Programme Executive →'
+  const roleLabel = isTHK ? 'THK' : 'LBSA'
 
   return (
     <aside
@@ -44,7 +44,7 @@ export default function Sidebar({ isOpen, onClose }: Props) {
         <div className={styles.monogram}>JT</div>
         <div className={styles.name}>{resumeData.name}</div>
         <div className={styles.subtitle}>
-          {isLBSA ? 'Programme Executive · LBSA' : 'Automation Specialist · NTUC Health'}
+          {isTHK ? 'Programme Executive · THKMC' : 'Programme Executive · LBSA'}
         </div>
         <div className={styles.roleBadge}>
           <span className={styles.roleDot}>●</span> {roleLabel}
