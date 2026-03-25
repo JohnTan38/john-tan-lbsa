@@ -1,4 +1,4 @@
-import { resume } from '@/data/resume'
+import { resumeTHK } from '@/data/resumeTHK'
 import type { ResumeData } from '@/data/resume'
 
 export interface PageMeta {
@@ -13,55 +13,55 @@ export const PAGES: PageMeta[] = [
     path: '/',
     label: 'Home',
     icon: '🏠',
-    searchText: `${resume.name} ${resume.title} ${Object.values(resume.contact).join(' ')}`,
+    searchText: `${resumeTHK.name} ${resumeTHK.title} ${Object.values(resumeTHK.contact).join(' ')}`,
   },
   {
     path: '/summary',
     label: 'Summary',
     icon: '📝',
-    searchText: resume.summary.searchText,
+    searchText: resumeTHK.summary.searchText,
   },
   {
     path: '/competencies',
     label: 'Competencies',
     icon: '⭐',
-    searchText: resume.competencies.searchText,
+    searchText: resumeTHK.competencies.searchText,
   },
   {
     path: '/experience/cogent',
     label: 'Cogent — GenAI Eng',
     icon: '🤖',
-    searchText: resume.experience[0].searchText,
+    searchText: resumeTHK.experience[0].searchText,
   },
   {
     path: '/experience/st-engineering',
     label: 'ST Eng — RPA Spec',
     icon: '⚙️',
-    searchText: resume.experience[1].searchText,
+    searchText: resumeTHK.experience[1].searchText,
   },
   {
     path: '/experience/abnamro',
     label: 'ABN AMRO — Finance',
     icon: '💼',
-    searchText: resume.experience[2].searchText,
+    searchText: resumeTHK.experience[2].searchText,
   },
   {
     path: '/education',
     label: 'Education',
     icon: '🎓',
-    searchText: resume.education.searchText,
+    searchText: resumeTHK.education.searchText,
   },
   {
     path: '/certifications',
     label: 'Certifications',
     icon: '🏅',
-    searchText: resume.certifications.searchText,
+    searchText: resumeTHK.certifications.searchText,
   },
   {
     path: '/vision',
     label: 'Innovation Vision',
     icon: '💡',
-    searchText: resume.vision.searchText,
+    searchText: resumeTHK.vision.searchText,
   },
 ]
 
