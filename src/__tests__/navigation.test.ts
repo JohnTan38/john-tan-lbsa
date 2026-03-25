@@ -5,7 +5,7 @@ import {
   searchSections,
   getSearchPages,
 } from '@/lib/navigation'
-import { resume } from '@/data/resume'
+import { resumeTHK } from '@/data/resumeTHK'
 import { resumeLBSA } from '@/data/resumeLBSA'
 
 describe('PAGES', () => {
@@ -57,8 +57,8 @@ describe('searchSections', () => {
     expect(searchSections('')).toHaveLength(9)
   })
 
-  it('finds summary page for "uipath"', () => {
-    const results = searchSections('uipath')
+  it('finds summary page for "volunteer"', () => {
+    const results = searchSections('volunteer')
     expect(results.some(p => p.path === '/summary')).toBe(true)
   })
 
@@ -72,31 +72,37 @@ describe('searchSections', () => {
   })
 
   it('is case-insensitive', () => {
-    const lower = searchSections('azure')
-    const upper = searchSections('AZURE')
+    const lower = searchSections('outreach')
+    const upper = searchSections('OUTREACH')
     expect(lower).toEqual(upper)
   })
 })
 
 describe('getSearchPages', () => {
-  it('returns 9 pages for automation resume', () => {
-    expect(getSearchPages(resume)).toHaveLength(9)
+  it('returns 9 pages for THK resume', () => {
+    expect(getSearchPages(resumeTHK)).toHaveLength(9)
   })
 
   it('returns 9 pages for LBSA resume', () => {
     expect(getSearchPages(resumeLBSA)).toHaveLength(9)
   })
 
-  it('automation pages contain uipath in summary searchText', () => {
-    const pages = getSearchPages(resume)
+  it('THK pages contain volunteer in summary searchText', () => {
+    const pages = getSearchPages(resumeTHK)
     const summary = pages.find(p => p.path === '/summary')!
-    expect(summary.searchText.toLowerCase()).toContain('uipath')
+    expect(summary.searchText.toLowerCase()).toContain('volunteer')
   })
 
   it('LBSA pages contain active ageing in summary searchText', () => {
     const pages = getSearchPages(resumeLBSA)
     const summary = pages.find(p => p.path === '/summary')!
     expect(summary.searchText.toLowerCase()).toContain('active ageing')
+  })
+
+  it('THK pages contain thkmc in summary searchText', () => {
+    const pages = getSearchPages(resumeTHK)
+    const summary = pages.find(p => p.path === '/summary')!
+    expect(summary.searchText.toLowerCase()).toContain('thkmc')
   })
 
   it('LBSA pages contain community screener tool in education searchText', () => {
@@ -106,14 +112,14 @@ describe('getSearchPages', () => {
   })
 
   it('first page is / for both roles', () => {
-    expect(getSearchPages(resume)[0].path).toBe('/')
+    expect(getSearchPages(resumeTHK)[0].path).toBe('/')
     expect(getSearchPages(resumeLBSA)[0].path).toBe('/')
   })
 
   it('last page is /vision for both roles', () => {
-    const autoPages = getSearchPages(resume)
+    const thkPages = getSearchPages(resumeTHK)
     const lbsaPages = getSearchPages(resumeLBSA)
-    expect(autoPages[autoPages.length - 1].path).toBe('/vision')
+    expect(thkPages[thkPages.length - 1].path).toBe('/vision')
     expect(lbsaPages[lbsaPages.length - 1].path).toBe('/vision')
   })
 })
