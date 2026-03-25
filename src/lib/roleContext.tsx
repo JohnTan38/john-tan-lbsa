@@ -2,10 +2,10 @@
 
 import { createContext, useContext, useState, useEffect, useCallback } from 'react'
 import type { ResumeData } from '@/data/resume'
-import { resume } from '@/data/resume'
+import { resumeTHK } from '@/data/resumeTHK'
 import { resumeLBSA } from '@/data/resumeLBSA'
 
-export type Role = 'lbsa' | 'automation'
+export type Role = 'thk' | 'lbsa'
 
 interface RoleContextValue {
   role: Role
@@ -14,29 +14,29 @@ interface RoleContextValue {
 }
 
 const RoleContext = createContext<RoleContextValue>({
-  role: 'lbsa',
-  resumeData: resumeLBSA,
+  role: 'thk',
+  resumeData: resumeTHK,
   switcherHref: (path) => path,
 })
 
 export function RoleProvider({ children }: { children: React.ReactNode }) {
-  const [role, setRole] = useState<Role>('lbsa')
+  const [role, setRole] = useState<Role>('thk')
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const r = params.get('role')
-    setRole(r === 'automation' ? 'automation' : 'lbsa')
+    setRole(r === 'lbsa' ? 'lbsa' : 'thk')
   }, [])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-role', role)
   }, [role])
 
-  const resumeData = role === 'automation' ? resume : resumeLBSA
+  const resumeData = role === 'lbsa' ? resumeLBSA : resumeTHK
 
   const switcherHref = useCallback((currentPath: string): string => {
-    const targetRole = role === 'lbsa' ? 'automation' : 'lbsa'
-    if (targetRole === 'lbsa') return currentPath
+    const targetRole = role === 'thk' ? 'lbsa' : 'thk'
+    if (targetRole === 'thk') return currentPath
     return `${currentPath}?role=${targetRole}`
   }, [role])
 
