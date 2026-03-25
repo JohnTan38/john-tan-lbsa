@@ -52,14 +52,33 @@ mark {
   }
 }
 
+/* Hero gradient variables */
+:root {
+  --hero-gradient: linear-gradient(135deg, #0f1e36 0%, #243d5c 60%, #1a2e4a 100%);
+}
+
 /* LBSA Programme Executive theme — Lion Befrienders blue/white */
 [data-role="lbsa"] {
-  --navy:       #1565C0;
-  --navy-dark:  #0D47A1;
-  --navy-mid:   #1976D2;
-  --gold:       #42A5F5;
-  --gold-light: #90CAF9;
-  --gold-dim:   #1E88E5;
+  --navy:       #0D47A1;
+  --navy-dark:  #0A3880;
+  --navy-mid:   #1565C0;
+  --gold:       #FFB300;
+  --gold-light: #FFE082;
+  --gold-dim:   #F9A825;
   --surface:    #FFFFFF;
   --border:     #E3F2FD;
+  --hero-gradient: linear-gradient(135deg, #0A3880 0%, #1565C0 60%, #0D47A1 100%);
+}
+
+/* THK Programme Executive theme — Thye Hua Kwan dark blue/red */
+[data-role="thk"] {
+  --navy:       #1a2557;
+  --navy-dark:  #0d1840;
+  --navy-mid:   #253680;
+  --gold:       #c41e3a;
+  --gold-light: #e05070;
+  --gold-dim:   #a01830;
+  --surface:    #fafbff;
+  --border:     #e8eaf6;
+  --hero-gradient: linear-gradient(135deg, #0d1840 0%, #253680 60%, #1a2557 100%);
 }
