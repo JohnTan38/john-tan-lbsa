@@ -110,6 +110,8 @@ export const resumeLBSA: ResumeData = {
     searchText: "certifications wsq diploma social service tsao foundation sctp career transition microsoft azure ai engineer google professional machine learning engineer professional development eldercare social service",
   },
   vision: {
+    heading: "A Vision for LBSA Active Ageing Excellence",
+    sectionLabel: "Programme Executive: Active Ageing Centre | Lions Befrienders",
     sections: [
       {
         title: "Inclusive & Relevant AAC Programming",

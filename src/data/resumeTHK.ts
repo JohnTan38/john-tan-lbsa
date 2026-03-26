@@ -110,6 +110,8 @@ export const resumeTHK: ResumeData = {
     searchText: "certifications wsq diploma social service tsao foundation sctp career transition microsoft azure ai engineer google professional machine learning engineer professional development social service volunteer management",
   },
   vision: {
+    heading: "A Vision for THKMC Community Impact",
+    sectionLabel: "Programme Executive: Volunteer Development & Community Outreach",
     sections: [
       {
         title: "Integrated Senior Outreach & Mutual Help",

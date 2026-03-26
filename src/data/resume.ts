@@ -37,6 +37,8 @@ export interface ResumeData {
   education: { entries: EducationEntry[]; searchText: string }
   certifications: { items: string[]; searchText: string }
   vision: {
+    heading: string
+    sectionLabel: string
     sections: { title: string; body: string }[]
     closing: { title: string; body: string }
     searchText: string
@@ -153,6 +155,8 @@ export const resume: ResumeData = {
     searchText: "certifications uipath advanced developer microsoft azure ai engineer associate google professional machine learning engineer rpa",
   },
   vision: {
+    heading: "A Vision for NTUC Health Digital Transformation",
+    sectionLabel: "Automation Specialist: Intelligent Healthcare Process Innovation",
     sections: [
       {
         title: "Intelligent Care Coordination Automation",
